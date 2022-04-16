@@ -31,10 +31,18 @@ class differential:
         else:
             print("No Weekend Differential added to pay period.")
         diff_evening = float(input("What kind of differential is your evening pay? 1 = increase hourly pay? | 2 ="
-                                   " pay multiplier | 3 = no evening differential"))
+                                   " pay multiplier | 3 = no evening differential "))
         if diff_evening == 1:
             diff_evening_payrate = float(input("How much extra is your hourly rate? "))
         elif diff_weekend == 2:
             diff_evening_paymulti = float(input("What is your pay multiplier? "))
         else:
             print("No Evening Differential added to pay period.")
+        diff_overnight = float(input("What kind of differential is your overnight pay? 1 = increase hourly pay? | 2 ="
+                                     " pay multiplier | 3 = no overnight differential "))
+        if diff_overnight == 1:
+            diff_overnight_payrate = float(input("How much extra is your hourly rate? "))
+        elif diff_overnight == 2:
+            diff_overnight_paymulti = float(input("What is your pay multiplier? "))
+        else:
+            print("No Overnight Differential added to pay period.")
