@@ -21,4 +21,20 @@ class basepay:
 
 class differential:
     diff_exist = float(input("Does your job offer shift differentials? 1 = yes | 2 = no "))
-    
+    if diff_exist == 1:
+        diff_weekend = float(input("What kind of differential is your weekend pay? 1 = increase hourly pay? | 2 ="
+                                   " pay multiplier | 3 = no weekend differential "))
+        if diff_weekend == 1:
+            diff_weekend_payrate = float(input("How much extra is your hourly rate? "))
+        elif diff_weekend == 2:
+            diff_weekend_paymulti = float(input("What is your pay multiplier? "))
+        else:
+            print("No Weekend Differential added to pay period.")
+        diff_evening = float(input("What kind of differential is your evening pay? 1 = increase hourly pay? | 2 ="
+                                   " pay multiplier | 3 = no evening differential"))
+        if diff_evening == 1:
+            diff_evening_payrate = float(input("How much extra is your hourly rate? "))
+        elif diff_weekend == 2:
+            diff_evening_paymulti = float(input("What is your pay multiplier? "))
+        else:
+            print("No Evening Differential added to pay period.")
