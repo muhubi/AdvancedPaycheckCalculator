@@ -8,6 +8,9 @@ class basepay:
     work_week = 40
     ot_multiplier = 2
     hours_worked = 50
+    weekend_hours_worked = 8
+    evening_hours_worked = 8
+    overnight_hours_worked = 10
     if hours_worked > work_week:
         ot_hours = hours_worked - work_week
     else:
@@ -34,7 +37,7 @@ class differential:
                                    " pay multiplier | 3 = no evening differential "))
         if diff_evening == 1:
             diff_evening_payrate = float(input("How much extra is your hourly rate? "))
-        elif diff_weekend == 2:
+        elif diff_evening == 2:
             diff_evening_paymulti = float(input("What is your pay multiplier? "))
         else:
             print("No Evening Differential added to pay period.")
