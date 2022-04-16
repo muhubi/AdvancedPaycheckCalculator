@@ -6,8 +6,8 @@ class basepay:
     # ot_multiplier = float(input("How much does your payrate multiply by with overtime? "))
     payrate = 20
     work_week = 40
-    ot_multiplier = 2
     hours_worked = 50
+    ot_multiplier = 2
     if hours_worked > work_week:
         ot_hours = hours_worked - work_week
     else:
