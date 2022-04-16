@@ -27,11 +27,14 @@ class differential:
                                        " pay multiplier | 3 = no weekend differential "))
             if diff_weekend == 1:
                 diff_weekend_payrate = float(input("How much extra is your hourly rate? "))
+                weekend_pay = weekend_hours_worked * (basepay.payrate + diff_weekend_payrate)
             elif diff_weekend == 2:
                 diff_weekend_paymulti = float(input("What is your pay multiplier? "))
+                weekend_pay = weekend_hours_worked * basepay.payrate * diff_weekend_paymulti
             else:
                 diff_weekend_payrate = 0
                 diff_weekend_paymulti = 0
+                weekend_pay = 0
                 print("No Weekend Differential added to pay period.")
         else:
             print("No Weekend Differential added to pay period.")
@@ -63,9 +66,9 @@ class differential:
                 print("No Overnight Differential added to pay period.")
         else:
             print("No Overnight Differential added to pay period.")
-            weekend_pay = 8
 
 
+# weekend_pay = differential.weekend_pay_rate + differential.weekend_pay_multi
 
 print(" ")
 print("-------------------------")
