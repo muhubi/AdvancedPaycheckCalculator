@@ -23,32 +23,43 @@ class differential:
     diff_exist = float(input("Does your job offer shift differentials? 1 = yes | 2 = no "))
     if diff_exist == 1:
         weekend_hours_worked = float(input("How many hours of your total hours worked were weekend? "))
-        diff_weekend = float(input("What kind of differential is your weekend pay? 1 = increase hourly pay? | 2 ="
-                                   " pay multiplier | 3 = no weekend differential "))
-        if diff_weekend == 1:
-            diff_weekend_payrate = float(input("How much extra is your hourly rate? "))
-        elif diff_weekend == 2:
-            diff_weekend_paymulti = float(input("What is your pay multiplier? "))
+        if weekend_hours_worked > 0:
+            diff_weekend = float(input("What kind of differential is your weekend pay? 1 = increase hourly pay? | 2 ="
+                                       " pay multiplier | 3 = no weekend differential "))
+            if diff_weekend == 1:
+                diff_weekend_payrate = float(input("How much extra is your hourly rate? "))
+            elif diff_weekend == 2:
+                diff_weekend_paymulti = float(input("What is your pay multiplier? "))
+            else:
+                print("No Weekend Differential added to pay period.")
         else:
             print("No Weekend Differential added to pay period.")
-        diff_evening = float(input("What kind of differential is your evening pay? 1 = increase hourly pay? | 2 ="
-                                   " pay multiplier | 3 = no evening differential "))
-        if diff_evening == 1:
-            diff_evening_payrate = float(input("How much extra is your hourly rate? "))
-        elif diff_evening == 2:
-            diff_evening_paymulti = float(input("What is your pay multiplier? "))
+        evening_hours_worked = float(input("How many hours of your total hours worked were evenings? "))
+        if evening_hours_worked > 0:
+            diff_evening = float(input("What kind of differential is your evening pay? 1 = increase hourly pay? | 2 ="
+                                       " pay multiplier | 3 = no evening differential "))
+            if diff_evening == 1:
+                diff_evening_payrate = float(input("How much extra is your hourly rate? "))
+            elif diff_evening == 2:
+                diff_evening_paymulti = float(input("What is your pay multiplier? "))
+            else:
+                print("No Evening Differential added to pay period.")
         else:
             print("No Evening Differential added to pay period.")
-        diff_overnight = float(input("What kind of differential is your overnight pay? 1 = increase hourly pay? | 2 ="
-                                     " pay multiplier | 3 = no overnight differential "))
-        if diff_overnight == 1:
-            diff_overnight_payrate = float(input("How much extra is your hourly rate? "))
-        elif diff_overnight == 2:
-            diff_overnight_paymulti = float(input("What is your pay multiplier? "))
+        overnight_hours_worked = float(input("How many hours of your total hours worked were overnights? "))
+        if overnight_hours_worked > 0:
+            diff_overnight = float(input("What kind of differential is your overnight pay? 1 = increase hourly pay? | 2 ="
+                                         " pay multiplier | 3 = no overnight differential "))
+            if diff_overnight == 1:
+                diff_overnight_payrate = float(input("How much extra is your hourly rate? "))
+            elif diff_overnight == 2:
+                diff_overnight_paymulti = float(input("What is your pay multiplier? "))
+            else:
+                print("No Overnight Differential added to pay period.")
         else:
             print("No Overnight Differential added to pay period.")
-        weekend_pay = weekend_hours_worked * basepay.payrate * diff_weekend_paymulti
-
+        # Where the shift differential calculations actually occur
+        weekend_pay = 2
 
     print(" ")
     print("-------------------------")
