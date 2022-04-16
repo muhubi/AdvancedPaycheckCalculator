@@ -12,7 +12,6 @@ class basepay:
         ot_hours = hours_worked - work_week
     else:
         ot_hours = 0
-    print("You work", int(ot_hours), "hours of overtime this pay period!")
     reg_basepay = (hours_worked - ot_hours) * payrate
     ot_basepay = ot_hours * payrate * ot_multiplier
     basepay_total = reg_basepay + ot_basepay
@@ -31,6 +30,8 @@ class differential:
             elif diff_weekend == 2:
                 diff_weekend_paymulti = float(input("What is your pay multiplier? "))
             else:
+                diff_weekend_payrate = 0
+                diff_weekend_paymulti = 0
                 print("No Weekend Differential added to pay period.")
         else:
             print("No Weekend Differential added to pay period.")
@@ -43,26 +44,33 @@ class differential:
             elif diff_evening == 2:
                 diff_evening_paymulti = float(input("What is your pay multiplier? "))
             else:
+                diff_evening_payrate = 0
+                diff_evening_paymulti = 0
                 print("No Evening Differential added to pay period.")
         else:
             print("No Evening Differential added to pay period.")
         overnight_hours_worked = float(input("How many hours of your total hours worked were overnights? "))
         if overnight_hours_worked > 0:
-            diff_overnight = float(input("What kind of differential is your overnight pay? 1 = increase hourly pay? | 2 ="
-                                         " pay multiplier | 3 = no overnight differential "))
+            diff_overnight = float(input("What kind of differential is your overnight pay? 1 = increase hourly pay? |"
+                                         " 2 = pay multiplier | 3 = no overnight differential "))
             if diff_overnight == 1:
                 diff_overnight_payrate = float(input("How much extra is your hourly rate? "))
             elif diff_overnight == 2:
                 diff_overnight_paymulti = float(input("What is your pay multiplier? "))
             else:
+                diff_overnight_payrate = 0
+                diff_overnight_paymulti = 0
                 print("No Overnight Differential added to pay period.")
         else:
             print("No Overnight Differential added to pay period.")
-        # Where the shift differential calculations actually occur
-        weekend_pay = 2
+            weekend_pay = 8
 
-    print(" ")
-    print("-------------------------")
-    print(" ")
-    print("Your basepay for this pay period will be: $", basepay.basepay_total)
-    print("Your weekend pay differential will be: $", weekend_pay)
+
+
+print(" ")
+print("-------------------------")
+print(" ")
+print("Your basepay for this pay period will be: $", basepay.reg_basepay)
+print("You work", int(basepay.ot_hours), "hours of overtime this pay period!")
+print("Your OT pay for this pay period will be: $", basepay.ot_basepay)
+print("Your weekend pay differential will be: $", differential.weekend_pay)
