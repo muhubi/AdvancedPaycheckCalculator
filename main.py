@@ -8,9 +8,6 @@ class basepay:
     work_week = 40
     ot_multiplier = 2
     hours_worked = 50
-    weekend_hours_worked = 8
-    evening_hours_worked = 8
-    overnight_hours_worked = 10
     if hours_worked > work_week:
         ot_hours = hours_worked - work_week
     else:
@@ -19,12 +16,13 @@ class basepay:
     reg_basepay = (hours_worked - ot_hours) * payrate
     ot_basepay = ot_hours * payrate * ot_multiplier
     basepay_total = reg_basepay + ot_basepay
-    print("Your basepay for this pay period will be: $", basepay_total)
 
 
+# Differential Portion of Calculator
 class differential:
     diff_exist = float(input("Does your job offer shift differentials? 1 = yes | 2 = no "))
     if diff_exist == 1:
+        weekend_hours_worked = float(input("How many hours of your total hours worked were weekend? "))
         diff_weekend = float(input("What kind of differential is your weekend pay? 1 = increase hourly pay? | 2 ="
                                    " pay multiplier | 3 = no weekend differential "))
         if diff_weekend == 1:
@@ -49,3 +47,11 @@ class differential:
             diff_overnight_paymulti = float(input("What is your pay multiplier? "))
         else:
             print("No Overnight Differential added to pay period.")
+        weekend_pay = weekend_hours_worked * basepay.payrate * diff_weekend_paymulti
+
+
+    print(" ")
+    print("-------------------------")
+    print(" ")
+    print("Your basepay for this pay period will be: $", basepay.basepay_total)
+    print("Your weekend pay differential will be: $", weekend_pay)
