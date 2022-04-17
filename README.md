@@ -17,4 +17,4 @@ Features include:
   5. Planning
   6. Future feature
 
-[@muhubi}(https://www.twitter.com/muhubi)
+[@muhubi](https://www.twitter.com/muhubi)
