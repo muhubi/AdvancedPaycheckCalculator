@@ -1,6 +1,6 @@
 # Base Payrate Calculator
 class basepay:
-    # payrate = float(input("What is your current payrate? $"))
+    # payrate = float(input("What is your current payrate? $").replace('$', ""))
     # work_week = float(input("How many hours are in typical pay period? "))
     # hours_worked = float(input("How many hours did you work during your pay period? "))
     # ot_multiplier = float(input("How much does your payrate multiply by with overtime? "))
@@ -27,7 +27,7 @@ class differential:
             diff_weekend = float(input("What kind of differential is your weekend pay? 1 = increase hourly pay? | 2 ="
                                        " pay multiplier | 3 = no weekend differential "))
             if diff_weekend == 1:
-                diff_weekend_payrate = float(input("How much extra is your hourly rate? "))
+                diff_weekend_payrate = float(input("How much extra is your hourly rate? $").replace('$', ""))
                 weekend_pay = weekend_hours_worked * (basepay.payrate + diff_weekend_payrate)
             elif diff_weekend == 2:
                 diff_weekend_paymulti = float(input("What is your pay multiplier? "))
@@ -48,7 +48,7 @@ class differential:
             diff_evening = float(input("What kind of differential is your evening pay? 1 = increase hourly pay? | 2 ="
                                        " pay multiplier | 3 = no evening differential "))
             if diff_evening == 1:
-                diff_evening_payrate = float(input("How much extra is your hourly rate? "))
+                diff_evening_payrate = float(input("How much extra is your hourly rate? $").replace('$', ""))
                 evening_pay = evening_hours_worked * (basepay.payrate + diff_evening_payrate)
             elif diff_evening == 2:
                 diff_evening_paymulti = float(input("What is your pay multiplier? "))
@@ -69,7 +69,7 @@ class differential:
             diff_overnight = float(input("What kind of differential is your overnight pay? 1 = increase hourly pay? |"
                                          " 2 = pay multiplier | 3 = no overnight differential "))
             if diff_overnight == 1:
-                diff_overnight_payrate = float(input("How much extra is your hourly rate? "))
+                diff_overnight_payrate = float(input("How much extra is your hourly rate? $").replace('$', ""))
                 overnight_pay = overnight_hours_worked * (basepay.payrate + diff_overnight_payrate)
             elif diff_overnight == 2:
                 diff_overnight_paymulti = float(input("What is your pay multiplier? "))
