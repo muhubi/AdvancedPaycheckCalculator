@@ -39,6 +39,9 @@ class differential:
                 print("No Weekend Differential added to pay period.")
         else:
             print("No Weekend Differential added to pay period.")
+            diff_weekend_payrate = 0
+            diff_weekend_paymulti = 0
+            weekend_pay = 0
         # Evening Diff Section
         evening_hours_worked = float(input("How many hours of your total hours worked were evenings? "))
         if evening_hours_worked > 0:
@@ -57,6 +60,9 @@ class differential:
                 print("No Evening Differential added to pay period.")
         else:
             print("No Evening Differential added to pay period.")
+            diff_evening_payrate = 0
+            diff_evening_paymulti = 0
+            evening_pay = 0
         # Overnight Diff Section
         overnight_hours_worked = float(input("How many hours of your total hours worked were overnights? "))
         if overnight_hours_worked > 0:
@@ -75,10 +81,18 @@ class differential:
                 print("No Overnight Differential added to pay period.")
         else:
             print("No Overnight Differential added to pay period.")
+            diff_overnight_payrate = 0
+            diff_overnight_paymulti = 0
+            overnight_pay = 0
+    else:
+        weekend_pay = 0
+        evening_pay = 0
+        overnight_pay = 0
+        print("No Differential added!")
 
 
-gross_pay = basepay.reg_basepay + basepay.ot_basepay + differential.weekend_pay + differential.evening_pay + \
-            differential.overnight_pay
+gross_pay = float(basepay.reg_basepay) + float(basepay.ot_basepay) + float(differential.weekend_pay) + \
+            float(differential.evening_pay) + float(differential.overnight_pay)
 print(" ")
 print("-------------------------")
 print(" ")
