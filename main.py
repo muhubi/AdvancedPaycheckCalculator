@@ -12,3 +12,6 @@ print("Your evening pay differential will be: $", gross.differential.evening_pay
 print("Your overnight pay differential will be: $", gross.differential.overnight_pay)
 print(" ")
 print("Your total gross pay for this pay period will be: $", gross.gross_pay)
+# print("Your total federal tax deduction = $", gross.gross_pay - (fed.fedpay.net_pay / gross.basepay.pay_periods))
+print(fed.fedpay.annual_gross_pay)
+print("Your total net pay for this pay period is: $", fed.fedpay.net_pay)

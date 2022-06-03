@@ -2,10 +2,12 @@
 class basepay:
     # payrate = float(input("What is your current payrate? $").replace('$', ""))
     # work_week = float(input("How many hours are in typical pay period? "))
+    # pay_periods = float(input("How many pay periods are in a year? "))
     # hours_worked = float(input("How many hours did you work during your pay period? "))
     # ot_multiplier = float(input("How much does your payrate multiply by with overtime? "))
     payrate = 20
     work_week = 40
+    pay_periods = 52
     hours_worked = 50
     ot_multiplier = 2
     if hours_worked > work_week:
