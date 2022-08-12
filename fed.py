@@ -8,12 +8,12 @@ class fedbracket:
                                 "3 = Married, filing separately | 4 = Head of Household "))
     if filing_status == 1:
         print("Filing status = Single")
-        tax_bracket_1 = 10275
-        tax_bracket_2 = 41775
-        tax_bracket_3 = 89075
-        tax_bracket_4 = 170050
-        tax_bracket_5 = 215950
-        tax_bracket_6 = 539900
+        tax_bracket_1 = 9950
+        tax_bracket_2 = 40525
+        tax_bracket_3 = 86375
+        tax_bracket_4 = 164925
+        tax_bracket_5 = 209425
+        tax_bracket_6 = 523600
     elif filing_status == 2:
         print("Filing status = Married, filing jointly")
         tax_bracket_1 = 20550
@@ -40,20 +40,29 @@ class fedbracket:
         tax_bracket_6 = 539900
 
 
+class taxmax:
+    taxmax1 = fedbracket.tax_bracket_1 * 0.1
+    taxmax2 = taxmax1 + (fedbracket.tax_bracket_2 - fedbracket.tax_bracket_1) * 0.12
+    taxmax3 = taxmax2 + (fedbracket.tax_bracket_3 - fedbracket.tax_bracket_2) * 0.22
+    taxmax4 = taxmax3 + (fedbracket.tax_bracket_4 - fedbracket.tax_bracket_3) * 0.24
+    taxmax5 = taxmax4 + (fedbracket.tax_bracket_5 - fedbracket.tax_bracket_4) * 0.32
+    taxmax6 = taxmax5 + (fedbracket.tax_bracket_6 - fedbracket.tax_bracket_5) * 0.37
+
+
 class fedpay:
     if annual_gross_pay <= fedbracket.tax_bracket_1:
         net_pay = annual_gross_pay * 0.9
     elif fedbracket.tax_bracket_1 < annual_gross_pay <= fedbracket.tax_bracket_2:
-        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_1) * 0.12) + 1027.50)
+        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_1) * 0.12) + taxmax.taxmax1)
     elif fedbracket.tax_bracket_2 < annual_gross_pay <= fedbracket.tax_bracket_3:
-        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_2) * 0.22) + 4807.50)
+        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_2) * 0.22) + taxmax.taxmax2)
     elif fedbracket.tax_bracket_3 < annual_gross_pay <= fedbracket.tax_bracket_4:
-        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_3) * 0.24) + 15213.50)
+        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_3) * 0.24) + taxmax.taxmax3)
     elif fedbracket.tax_bracket_4 < annual_gross_pay <= fedbracket.tax_bracket_5:
-        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_4) * 0.32) + 34647.50)
+        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_4) * 0.32) + taxmax.taxmax4)
     elif fedbracket.tax_bracket_5 < annual_gross_pay <= fedbracket.tax_bracket_6:
-        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_5) * 0.35) + 49335.50)
+        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_5) * 0.35) + taxmax.taxmax5)
     elif fedbracket.tax_bracket_6 < annual_gross_pay:
-        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_6) * 0.37) + 162718)
+        net_pay = annual_gross_pay - (((annual_gross_pay - fedbracket.tax_bracket_6) * 0.37) + taxmax.taxmax6)
     else:
         net_pay = "undefined"
