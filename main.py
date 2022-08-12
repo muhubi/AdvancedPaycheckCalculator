@@ -2,6 +2,7 @@ import gross
 import fed
 
 print(" ")
+print("-----------------------------------------------------------------------")
 print("Your basepay for this pay period will be: $", gross.basepay.reg_basepay)
 print(" ")
 print("You work", int(gross.basepay.ot_hours), "hours of overtime this pay period!")
@@ -18,3 +19,4 @@ total_net_pay = float(fed.fedpay.net_pay / gross.basepay.pay_periods)
 
 print("Your total federal tax deduction = $", float(f'{fed_tax_deduction:.2f}'))
 print("Your total net pay for this pay period is: $", float(f'{total_net_pay:.2f}'))
+print("-----------------------------------------------------------------------")
