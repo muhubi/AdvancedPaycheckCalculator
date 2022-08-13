@@ -4,11 +4,11 @@ My attempt to make an Advanced Paycheck Calculator
 Features include:
   - Calculating base pay (1)
   - Calcaulating OT pay (1)
-  - Calculating differentials (2)
+  - Calculating differentials (1)
   - Work on GitHub pages for calculator (6)
   - Federal tax deductions (2)
-  - Optimize fed tax deductions to use variables that can be dynamically changed (4)
-  - State tax deductions (6)
+  - Optimize fed tax deductions to use variables that can be dynamically changed (3)
+  - State tax deductions (4)
   - Pre-tax deductions (6)
   - Post-tax deductions (6)
  
