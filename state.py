@@ -1,7 +1,9 @@
-# import gross
-# import fed
-#
-# fed.annual_gross_pay = gross.gross_pay * gross.basepay.pay_periods
+import gross
+import fed
+
+fed.annual_gross_pay = gross.gross_pay * gross.basepay.pay_periods
+
+global state
 
 
 class filers_state:
@@ -15,10 +17,17 @@ class filers_state:
                            "OK", "OR", "RI", "SC", "VT", "VA", "WV", "WI", "DC", "D.C."]
 
     if state in state_no_tax:
-        print("Congratulations! You have no state income tax!")
+        state_tax_type = str("Congratulations! Your state has no income tax!")
     elif state in state_flat_tax:
-        print("Your state has a flat tax rate for income tax.")
+        state_tax_type = str("Your state has a flat tax rate for income tax.")
     elif state in state_graduated_tax:
-        print('Your state uses a Graduated-rate system for state income tax.')
+        state_tax_type = str("Your state uses a Graduated-rate system for state income tax.")
     else:
-        print("Please enter your state using only the 2 letter official abbreviation!")
+        state_tax_type = str("Please enter your state using only the 2 letter official abbreviation!")
+
+
+class filers_state_status:
+    status_status = input("What is your state tax filing status? 1 = Single | 2 = Married, filing jointly ")
+
+
+# class state_deduction:
