@@ -4,6 +4,8 @@ annual_gross_pay = gross.gross_pay * gross.basepay.pay_periods
 
 
 class fedbracket:
+    # This class should be updated annually to account for the updates tax bracket minimums
+    # and maximums for the current fiscal year as updated per the United States IRS
     filing_status = float(input("What is your federal tax filing status? 1 = Single | 2 = Married, filing jointly | "
                                 "3 = Married, filing separately | 4 = Head of Household "))
     if filing_status == 1:
@@ -41,6 +43,10 @@ class fedbracket:
 
 
 class taxmax:
+    # This class is for calculating the maximum tax rate for the prior tax bracket which is used
+    # in the fedpay class to calculate the total tax deductions. This class should not need to
+    # be modified except for if the IRS changes the number of tax brackets and/or the percentage
+    # that filer are taxed at
     taxmax1 = fedbracket.tax_bracket_1 * 0.1
     taxmax2 = taxmax1 + (fedbracket.tax_bracket_2 - fedbracket.tax_bracket_1) * 0.12
     taxmax3 = taxmax2 + (fedbracket.tax_bracket_3 - fedbracket.tax_bracket_2) * 0.22
@@ -50,6 +56,10 @@ class taxmax:
 
 
 class fedpay:
+    # This class calculates the total federal tax deduction that is taken from the gross
+    # annual pay of the user. This class should not need to be modified except for if
+    # the IRS changes the number of tax brackets and/or the percentage that filers are
+    # taxed at
     if annual_gross_pay <= fedbracket.tax_bracket_1:
         net_pay = annual_gross_pay * 0.9
     elif fedbracket.tax_bracket_1 < annual_gross_pay <= fedbracket.tax_bracket_2:
