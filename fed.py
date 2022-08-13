@@ -2,6 +2,9 @@ import gross
 
 annual_gross_pay = gross.gross_pay * gross.basepay.pay_periods
 
+# Special thank to <https://www.nerdwallet.com/article/taxes/federal-income-tax-brackets> for
+# being a useful source of information for federal tax brackets. I recommend using this website
+# to update the tax bracket information for the next fiscal year.
 
 class fedbracket:
     # This class should be updated annually to account for the updates tax bracket minimums
