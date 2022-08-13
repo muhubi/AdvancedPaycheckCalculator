@@ -1,15 +1,15 @@
 # Base Payrate Calculator
 class basepay:
-    payrate = float(input("What is your current payrate? $").replace('$', ""))
-    work_week = float(input("How many hours are in typical pay period? "))
-    pay_periods = float(input("How many pay periods are in a year? "))
-    hours_worked = float(input("How many hours did you work during your pay period? "))
-    ot_multiplier = float(input("How much does your payrate multiply by with overtime? "))
-    # payrate = 20
-    # work_week = 40
-    # pay_periods = 52
-    # hours_worked = 50
-    # ot_multiplier = 2
+    # payrate = float(input("What is your current payrate? $").replace('$', ""))
+    # work_week = float(input("How many hours are in typical pay period? "))
+    # pay_periods = float(input("How many pay periods are in a year? "))
+    # hours_worked = float(input("How many hours did you work during your pay period? "))
+    # ot_multiplier = float(input("How much does your payrate multiply by with overtime? "))
+    payrate = 250
+    work_week = 40
+    pay_periods = 52
+    hours_worked = 60
+    ot_multiplier = 1.5
     if hours_worked > work_week:
         ot_hours = hours_worked - work_week
     else:
@@ -21,7 +21,8 @@ class basepay:
 
 # Differential Portion of Calculator
 class differential:
-    diff_exist = float(input("Does your job offer shift differentials? 1 = yes | 2 = no "))
+    # diff_exist = float(input("Does your job offer shift differentials? 1 = yes | 2 = no "))
+    diff_exist = 2
     if diff_exist == 1:
         # Weekend Diff Section
         weekend_hours_worked = float(input("How many hours of your total hours worked were weekend? "))
