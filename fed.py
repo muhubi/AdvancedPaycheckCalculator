@@ -46,7 +46,7 @@ class taxmax:
     # This class is for calculating the maximum tax rate for the prior tax bracket which is used
     # in the fedpay class to calculate the total tax deductions. This class should not need to
     # be modified except for if the IRS changes the number of tax brackets and/or the percentage
-    # that filer are taxed at
+    # that filers are taxed at
     taxmax1 = fedbracket.tax_bracket_1 * 0.1
     taxmax2 = taxmax1 + (fedbracket.tax_bracket_2 - fedbracket.tax_bracket_1) * 0.12
     taxmax3 = taxmax2 + (fedbracket.tax_bracket_3 - fedbracket.tax_bracket_2) * 0.22
