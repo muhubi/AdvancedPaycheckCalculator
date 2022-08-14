@@ -30,4 +30,9 @@ class filers_state_status:
     status_status = input("What is your state tax filing status? 1 = Single | 2 = Married, filing jointly ")
 
 
-# class state_deduction:
+# Need to account for filing status
+class state_deduction:
+    if state in filers_state.state_no_tax:
+        state_tax_amount = 0
+    elif state == "CO":
+        state_tax_amount = fed.annual_gross_pay * 0.0455
